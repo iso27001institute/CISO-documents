@@ -1,241 +1,176 @@
-<!-- ISO 27001 CISO & GOVERNANCE COMPLIANCE MATRIX (HIGH-CONTRAST ENTERPRISE EDITION) -->
-<div class="iso-matrix-wrapper">
+<!-- ISO 27001 CISO MATRIX - HIGH CONTRAST (NO HOVER EFFECTS) -->
+<div class="iso-ciso-matrix-clean">
   <style>
-    .iso-matrix-wrapper {
-      background-color: #0B0F17;
-      border: 1px solid #1F2937;
-      border-radius: 12px;
-      padding: 24px;
-      color: #FFFFFF;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      max-width: 100%;
+    .iso-ciso-matrix-clean {
+      background-color: #0F172A !important;
+      border: 1px solid #334155 !important;
+      border-radius: 10px;
+      padding: 20px;
+      color: #FFFFFF !important;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       box-sizing: border-box;
       margin: 20px 0;
     }
-    .iso-matrix-header {
+    .iso-clean-header {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid #10B981;
-      padding-bottom: 16px;
-      margin-bottom: 24px;
-      gap: 12px;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
     }
-    .iso-matrix-title h3 {
+    .iso-clean-header h3 {
       margin: 0;
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       font-size: 20px;
       font-weight: 700;
-      letter-spacing: -0.02em;
     }
-    .iso-matrix-title p {
-      margin: 4px 0 0 0;
-      color: #D1D5DB;
-      font-size: 13px;
-    }
-    .iso-badge-total {
-      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
-      color: #FFFFFF;
+    .iso-clean-badge {
+      background-color: #10B981 !important;
+      color: #FFFFFF !important;
       font-weight: 800;
-      font-size: 13px;
-      padding: 6px 14px;
-      border-radius: 6px;
-      letter-spacing: 0.05em;
-      box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 4px;
     }
-    .iso-stats-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .iso-stat-card {
-      background: #111827;
-      border: 1px solid #374151;
-      border-radius: 8px;
-      padding: 12px 16px;
-    }
-    .iso-stat-val {
-      font-size: 18px;
-      font-weight: 800;
-      color: #38BDF8;
-    }
-    .iso-stat-lbl {
-      font-size: 11px;
-      color: #E5E7EB;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 2px;
-      font-weight: 600;
-    }
-    .iso-table-container {
+    .iso-clean-table-wrap {
       overflow-x: auto;
-      border-radius: 8px;
-      border: 1px solid #374151;
+      border: 1px solid #334155 !important;
+      border-radius: 6px;
     }
-    .iso-matrix-table {
+    .iso-clean-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
       font-size: 14px;
+      background-color: #0F172A !important;
     }
-    .iso-matrix-table th {
-      background-color: #111827;
-      color: #F9FAFB;
+    .iso-clean-table th {
+      background-color: #1E293B !important;
+      color: #38BDF8 !important;
       font-weight: 700;
-      padding: 14px 16px;
+      padding: 12px 16px;
       text-transform: uppercase;
       font-size: 12px;
-      letter-spacing: 0.05em;
-      border-bottom: 2px solid #374151;
+      border-bottom: 2px solid #334155 !important;
     }
-    .iso-matrix-table td {
+    .iso-clean-table td {
       padding: 12px 16px;
-      border-bottom: 1px solid #1F2937;
+      border-bottom: 1px solid #1E293B !important;
+      background-color: #0F172A !important; /* Fixed background to prevent site hover overrides */
     }
-    .iso-matrix-table td.doc-num {
+    /* COLUMN 1: BRIGHT CYAN NUMBER */
+    .iso-clean-table td.col-num {
       color: #38BDF8 !important;
       font-weight: 800 !important;
-      font-size: 13px !important;
-    }
-    .iso-matrix-table td.doc-name {
-      color: #FFFFFF !important;
-      font-weight: 600 !important;
       font-size: 14px !important;
-      letter-spacing: 0.01em;
     }
-    .iso-matrix-table tbody tr:nth-child(even) {
-      background-color: #0F172A;
+    /* COLUMN 2: SOLID PURE WHITE DOCUMENT NAME */
+    .iso-clean-table td.col-name {
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
     }
-    .iso-matrix-table tbody tr:hover {
-      background-color: #1E293B;
-    }
-    .iso-group-header {
+    .iso-clean-group {
       background-color: #1E293B !important;
       font-weight: 800 !important;
-      color: #38BDF8 !important;
-      border-left: 4px solid #38BDF8;
+      color: #34D399 !important;
+      border-left: 4px solid #10B981 !important;
       font-size: 14px !important;
-      letter-spacing: 0.02em;
     }
-    .fmt-badge {
+    .fmt-b {
       display: inline-block;
-      padding: 3px 9px;
+      padding: 3px 8px;
       border-radius: 4px;
       font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.05em;
+      font-weight: 700;
     }
-    .fmt-word { background-color: #1E40AF; color: #93C5FD; border: 1px solid #3B82F6; }
-    .fmt-excel { background-color: #065F46; color: #6EE7B7; border: 1px solid #10B981; }
-    .pg-badge { color: #F3F4F6; font-size: 13px; font-weight: 600; }
+    .fmt-w { background-color: #1E3A8A !important; color: #93C5FD !important; border: 1px solid #3B82F6 !important; }
+    .fmt-e { background-color: #064E3B !important; color: #6EE7B7 !important; border: 1px solid #10B981 !important; }
+    .pg-txt { color: #E2E8F0 !important; font-size: 13px; font-weight: 600; }
   </style>
 
-  <div class="iso-matrix-header">
-    <div class="iso-matrix-title">
-      <h3>CISO &amp; GOVERNANCE ARCHITECTURE</h3>
-      <p>ISO 27001:2022 Stage 1 &amp; Stage 2 Compliance Documentation Infrastructure</p>
-    </div>
-    <div class="iso-badge-total">51 EDITABLE DOCUMENTS</div>
+  <div class="iso-clean-header">
+    <h3>CISO &amp; GOVERNANCE ARCHITECTURE</h3>
+    <div class="iso-clean-badge">51 EDITABLE DOCUMENTS</div>
   </div>
 
-  <div class="iso-stats-bar">
-    <div class="iso-stat-card">
-      <div class="iso-stat-val">51 Files</div>
-      <div class="iso-stat-lbl">Exact Item Count</div>
-    </div>
-    <div class="iso-stat-card">
-      <div class="iso-stat-val">565 Pages</div>
-      <div class="iso-stat-lbl">CISO Document Volume</div>
-    </div>
-    <div class="iso-stat-card">
-      <div class="iso-stat-val">100%</div>
-      <div class="iso-stat-lbl">Audit Alignment</div>
-    </div>
-    <div class="iso-stat-card">
-      <div class="iso-stat-val">.DOCX / .XLSX</div>
-      <div class="iso-stat-lbl">Native Formats</div>
-    </div>
-  </div>
-
-  <div class="iso-table-container">
-    <table class="iso-matrix-table">
+  <div class="iso-clean-table-wrap">
+    <table class="iso-clean-table">
       <thead>
         <tr>
           <th style="width: 6%;">#</th>
           <th style="width: 54%;">Document Name</th>
           <th style="width: 20%;">Format</th>
-          <th style="width: 20%;">Length / Size</th>
+          <th style="width: 20%;">Length</th>
         </tr>
       </thead>
       <tbody>
-        <!-- PILLAR 1 -->
-        <tr><td colspan="4" class="iso-group-header">1. ISMS Framework & Scope (Docs 01 – 07)</td></tr>
-        <tr><td class="doc-num">01</td><td class="doc-name">ISMS Scope Document</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">20 Pages</span></td></tr>
-        <tr><td class="doc-num">02</td><td class="doc-name">ISMS Manual</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">30 Pages</span></td></tr>
-        <tr><td class="doc-num">03</td><td class="doc-name">ISMS Terms and Definitions</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">9 Pages</span></td></tr>
-        <tr><td class="doc-num">04</td><td class="doc-name">Information Security Manual</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">35 Pages</span></td></tr>
-        <tr><td class="doc-num">05</td><td class="doc-name">Information and Cyber Security Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">108 Pages</span></td></tr>
-        <tr><td class="doc-num">06</td><td class="doc-name">ISMS Policy Statement (MNC / Domestic)</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">2 Pages</span></td></tr>
-        <tr><td class="doc-num">07</td><td class="doc-name">Organization Security Structure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">7 Pages</span></td></tr>
+        <!-- SECTION 1 -->
+        <tr><td colspan="4" class="iso-clean-group">1. ISMS Framework &amp; Scope (Docs 01 – 07)</td></tr>
+        <tr><td class="col-num">01</td><td class="col-name">ISMS Scope Document</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">20 Pages</span></td></tr>
+        <tr><td class="col-num">02</td><td class="col-name">ISMS Manual</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">30 Pages</span></td></tr>
+        <tr><td class="col-num">03</td><td class="col-name">ISMS Terms and Definitions</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">9 Pages</span></td></tr>
+        <tr><td class="col-num">04</td><td class="col-name">Information Security Manual</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">35 Pages</span></td></tr>
+        <tr><td class="col-num">05</td><td class="col-name">Information and Cyber Security Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">108 Pages</span></td></tr>
+        <tr><td class="col-num">06</td><td class="col-name">ISMS Policy Statement (MNC / Domestic)</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">2 Pages</span></td></tr>
+        <tr><td class="col-num">07</td><td class="col-name">Organization Security Structure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">7 Pages</span></td></tr>
 
-        <!-- PILLAR 2 -->
-        <tr><td colspan="4" class="iso-group-header">2. Risk Management & Control (Docs 08 – 14)</td></tr>
-        <tr><td class="doc-num">08</td><td class="doc-name">Information Security Risk Management Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">15 Pages</span></td></tr>
-        <tr><td class="doc-num">09</td><td class="doc-name">Information Security Risk Register</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">6 Pages</span></td></tr>
-        <tr><td class="doc-num">10</td><td class="doc-name">Statement of Applicability (SoA)</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">2 Pages</span></td></tr>
-        <tr><td class="doc-num">11</td><td class="doc-name">Effectiveness of Controls Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">5 Pages</span></td></tr>
-        <tr><td class="doc-num">12</td><td class="doc-name">ISMS Objectives and Performance Tracker</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">2 Pages</span></td></tr>
-        <tr><td class="doc-num">13</td><td class="doc-name">Asset Security Classification Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">5 Pages</span></td></tr>
-        <tr><td class="doc-num">14</td><td class="doc-name">Information Classification, Labelling &amp; Handling Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">14 Pages</span></td></tr>
+        <!-- SECTION 2 -->
+        <tr><td colspan="4" class="iso-clean-group">2. Risk Management &amp; Control (Docs 08 – 14)</td></tr>
+        <tr><td class="col-num">08</td><td class="col-name">Information Security Risk Management Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">15 Pages</span></td></tr>
+        <tr><td class="col-num">09</td><td class="col-name">Information Security Risk Register</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">6 Pages</span></td></tr>
+        <tr><td class="col-num">10</td><td class="col-name">Statement of Applicability (SoA)</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">2 Pages</span></td></tr>
+        <tr><td class="col-num">11</td><td class="col-name">Effectiveness of Controls Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">5 Pages</span></td></tr>
+        <tr><td class="col-num">12</td><td class="col-name">ISMS Objectives and Performance Tracker</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">2 Pages</span></td></tr>
+        <tr><td class="col-num">13</td><td class="col-name">Asset Security Classification Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">5 Pages</span></td></tr>
+        <tr><td class="col-num">14</td><td class="col-name">Information Classification, Labelling &amp; Handling Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">14 Pages</span></td></tr>
 
-        <!-- PILLAR 3 -->
-        <tr><td colspan="4" class="iso-group-header">3. Asset & Usage Governance (Docs 15 – 21)</td></tr>
-        <tr><td class="doc-num">15</td><td class="doc-name">Asset Management Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">12 Pages</span></td></tr>
-        <tr><td class="doc-num">16</td><td class="doc-name">Asset Management Guidelines</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">18 Pages</span></td></tr>
-        <tr><td class="doc-num">17</td><td class="doc-name">Acceptable Usage Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">6 Pages</span></td></tr>
-        <tr><td class="doc-num">18</td><td class="doc-name">Acceptable Usage - Users Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">16 Pages</span></td></tr>
-        <tr><td class="doc-num">19</td><td class="doc-name">Acceptable Usage Guidelines</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">19 Pages</span></td></tr>
-        <tr><td class="doc-num">20</td><td class="doc-name">Internet Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">5 Pages</span></td></tr>
-        <tr><td class="doc-num">21</td><td class="doc-name">Guidelines for Secure Disposal or Re-Use of Equipment</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">4 Pages</span></td></tr>
+        <!-- SECTION 3 -->
+        <tr><td colspan="4" class="iso-clean-group">3. Asset &amp; Usage Governance (Docs 15 – 21)</td></tr>
+        <tr><td class="col-num">15</td><td class="col-name">Asset Management Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">12 Pages</span></td></tr>
+        <tr><td class="col-num">16</td><td class="col-name">Asset Management Guidelines</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">18 Pages</span></td></tr>
+        <tr><td class="col-num">17</td><td class="col-name">Acceptable Usage Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">6 Pages</span></td></tr>
+        <tr><td class="col-num">18</td><td class="col-name">Acceptable Usage - Users Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">16 Pages</span></td></tr>
+        <tr><td class="col-num">19</td><td class="col-name">Acceptable Usage Guidelines</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">19 Pages</span></td></tr>
+        <tr><td class="col-num">20</td><td class="col-name">Internet Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">5 Pages</span></td></tr>
+        <tr><td class="col-num">21</td><td class="col-name">Guidelines for Secure Disposal or Re-Use of Equipment</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">4 Pages</span></td></tr>
 
-        <!-- PILLAR 4 -->
-        <tr><td colspan="4" class="iso-group-header">4. Operations & Audit Control (Docs 22 – 38)</td></tr>
-        <tr><td class="doc-num">22</td><td class="doc-name">Asset Register</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">3 Pages</span></td></tr>
-        <tr><td class="doc-num">23</td><td class="doc-name">Communication Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">6 Pages</span></td></tr>
-        <tr><td class="doc-num">24</td><td class="doc-name">Communication Plan</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">2 Pages</span></td></tr>
-        <tr><td class="doc-num">25</td><td class="doc-name">Social Media Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">4 Pages</span></td></tr>
-        <tr><td class="doc-num">26</td><td class="doc-name">Procedure for Control of Documents and Records</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">18 Pages</span></td></tr>
-        <tr><td class="doc-num">27</td><td class="doc-name">ISMS Performance Status Monthly Report</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">26 Pages</span></td></tr>
-        <tr><td class="doc-num">28</td><td class="doc-name">ISMS Operation KPIs</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">3 Pages</span></td></tr>
-        <tr><td class="doc-num">29</td><td class="doc-name">Change Management Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">12 Pages</span></td></tr>
-        <tr><td class="doc-num">30</td><td class="doc-name">Change Management Register</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">1 Page</span></td></tr>
-        <tr><td class="doc-num">31</td><td class="doc-name">Exception Management Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">8 Pages</span></td></tr>
-        <tr><td class="doc-num">32</td><td class="doc-name">Internal Audit Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">11 Pages</span></td></tr>
-        <tr><td class="doc-num">33</td><td class="doc-name">Internal Audit Plan</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">2 Pages</span></td></tr>
-        <tr><td class="doc-num">34</td><td class="doc-name">Internal Auditors Training Record</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">1 Page</span></td></tr>
-        <tr><td class="doc-num">35</td><td class="doc-name">Internal Audit Finding Report</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">1 Page</span></td></tr>
-        <tr><td class="doc-num">36</td><td class="doc-name">Management Review Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">5 Pages</span></td></tr>
-        <tr><td class="doc-num">37</td><td class="doc-name">Minutes of Management Review</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">1 Page</span></td></tr>
-        <tr><td class="doc-num">38</td><td class="doc-name">NC and Corrective Action Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">9 Pages</span></td></tr>
+        <!-- SECTION 4 -->
+        <tr><td colspan="4" class="iso-clean-group">4. Operations &amp; Audit Control (Docs 22 – 38)</td></tr>
+        <tr><td class="col-num">22</td><td class="col-name">Asset Register</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">3 Pages</span></td></tr>
+        <tr><td class="col-num">23</td><td class="col-name">Communication Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">6 Pages</span></td></tr>
+        <tr><td class="col-num">24</td><td class="col-name">Communication Plan</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">2 Pages</span></td></tr>
+        <tr><td class="col-num">25</td><td class="col-name">Social Media Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">4 Pages</span></td></tr>
+        <tr><td class="col-num">26</td><td class="col-name">Procedure for Control of Documents and Records</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">18 Pages</span></td></tr>
+        <tr><td class="col-num">27</td><td class="col-name">ISMS Performance Status Monthly Report</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">26 Pages</span></td></tr>
+        <tr><td class="col-num">28</td><td class="col-name">ISMS Operation KPIs</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">3 Pages</span></td></tr>
+        <tr><td class="col-num">29</td><td class="col-name">Change Management Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">12 Pages</span></td></tr>
+        <tr><td class="col-num">30</td><td class="col-name">Change Management Register</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">1 Page</span></td></tr>
+        <tr><td class="col-num">31</td><td class="col-name">Exception Management Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">8 Pages</span></td></tr>
+        <tr><td class="col-num">32</td><td class="col-name">Internal Audit Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">11 Pages</span></td></tr>
+        <tr><td class="col-num">33</td><td class="col-name">Internal Audit Plan</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">2 Pages</span></td></tr>
+        <tr><td class="col-num">34</td><td class="col-name">Internal Auditors Training Record</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">1 Page</span></td></tr>
+        <tr><td class="col-num">35</td><td class="col-name">Internal Audit Finding Report</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">1 Page</span></td></tr>
+        <tr><td class="col-num">36</td><td class="col-name">Management Review Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">5 Pages</span></td></tr>
+        <tr><td class="col-num">37</td><td class="col-name">Minutes of Management Review</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">1 Page</span></td></tr>
+        <tr><td class="col-num">38</td><td class="col-name">NC and Corrective Action Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">9 Pages</span></td></tr>
 
-        <!-- PILLAR 5 -->
-        <tr><td colspan="4" class="iso-group-header">5. Incident, BCP & Compliance (Docs 39 – 51)</td></tr>
-        <tr><td class="doc-num">39</td><td class="doc-name">Incident Management Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">3 Pages</span></td></tr>
-        <tr><td class="doc-num">40</td><td class="doc-name">Incident Management Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">12 Pages</span></td></tr>
-        <tr><td class="doc-num">41</td><td class="doc-name">Incident Priority Escalation Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">4 Pages</span></td></tr>
-        <tr><td class="doc-num">42</td><td class="doc-name">Incident Reporting Form</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">1 Page</span></td></tr>
-        <tr><td class="doc-num">43</td><td class="doc-name">Incident Management Log</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">2 Pages</span></td></tr>
-        <tr><td class="doc-num">44</td><td class="doc-name">Business Continuity Management Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">11 Pages</span></td></tr>
-        <tr><td class="doc-num">45</td><td class="doc-name">ICT Business Continuity Management Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">17 Pages</span></td></tr>
-        <tr><td class="doc-num">46</td><td class="doc-name">IT Disaster Recovery Plan &amp; Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">29 Pages</span></td></tr>
-        <tr><td class="doc-num">47</td><td class="doc-name">Compliance Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">6 Pages</span></td></tr>
-        <tr><td class="doc-num">48</td><td class="doc-name">Compliance Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">8 Pages</span></td></tr>
-        <tr><td class="doc-num">49</td><td class="doc-name">Intellectual Property Rights Policy</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">10 Pages</span></td></tr>
-        <tr><td class="doc-num">50</td><td class="doc-name">Corrective Action Preventive Action (CAPA) Register</td><td><span class="fmt-badge fmt-excel">MS EXCEL</span></td><td><span class="pg-badge">2 Pages</span></td></tr>
-        <tr><td class="doc-num">51</td><td class="doc-name">Threat Intelligence Procedure</td><td><span class="fmt-badge fmt-word">MS WORD</span></td><td><span class="pg-badge">7 Pages</span></td></tr>
+        <!-- SECTION 5 -->
+        <tr><td colspan="4" class="iso-clean-group">5. Incident, BCP &amp; Compliance (Docs 39 – 51)</td></tr>
+        <tr><td class="col-num">39</td><td class="col-name">Incident Management Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">3 Pages</span></td></tr>
+        <tr><td class="col-num">40</td><td class="col-name">Incident Management Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">12 Pages</span></td></tr>
+        <tr><td class="col-num">41</td><td class="col-name">Incident Priority Escalation Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">4 Pages</span></td></tr>
+        <tr><td class="col-num">42</td><td class="col-name">Incident Reporting Form</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">1 Page</span></td></tr>
+        <tr><td class="col-num">43</td><td class="col-name">Incident Management Log</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">2 Pages</span></td></tr>
+        <tr><td class="col-num">44</td><td class="col-name">Business Continuity Management Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">11 Pages</span></td></tr>
+        <tr><td class="col-num">45</td><td class="col-name">ICT Business Continuity Management Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">17 Pages</span></td></tr>
+        <tr><td class="col-num">46</td><td class="col-name">IT Disaster Recovery Plan &amp; Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">29 Pages</span></td></tr>
+        <tr><td class="col-num">47</td><td class="col-name">Compliance Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">6 Pages</span></td></tr>
+        <tr><td class="col-num">48</td><td class="col-name">Compliance Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">8 Pages</span></td></tr>
+        <tr><td class="col-num">49</td><td class="col-name">Intellectual Property Rights Policy</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">10 Pages</span></td></tr>
+        <tr><td class="col-num">50</td><td class="col-name">Corrective Action Preventive Action (CAPA) Register</td><td><span class="fmt-b fmt-e">MS EXCEL</span></td><td><span class="pg-txt">2 Pages</span></td></tr>
+        <tr><td class="col-num">51</td><td class="col-name">Threat Intelligence Procedure</td><td><span class="fmt-b fmt-w">MS WORD</span></td><td><span class="pg-txt">7 Pages</span></td></tr>
       </tbody>
     </table>
   </div>
